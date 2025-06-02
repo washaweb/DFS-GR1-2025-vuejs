@@ -12,9 +12,23 @@ Dans cet exercice, tu vas :
 Projet fun : **"Générateur de pseudo gamer"** 🎲  
 Génère des pseudos en combinant aléatoirement des préfixes et suffixes selon un type de jeu sélectionné.
 
+Composer un formulaire qui permet de réaliser son propre pseudo en choisissant parmis ces options, astuce: utiliser une variable `computed` pour composer le nom final.
+
+Classes de jeu:
+
+```js
+{
+  fps: ['Sniper', 'Headshot', 'Ghost', 'Reaper'],
+  rpg: ['Elwyn', 'Shadowblade', 'Thorin', 'Elandor'],
+  str: ['Commandant', 'Tactik', 'Builder', 'ZergRush']
+}
+```
+
+Suffixe: `suffixes: ['X', '77', '_Pro', 'Master', '666']`
+
 ---
 
-## 🧱 Étape 1 : Le composant `App.vue`
+## 🧱 Correction : Le composant `App.vue`
 
 ```vue
 <template>

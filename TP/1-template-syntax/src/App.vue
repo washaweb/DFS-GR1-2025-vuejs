@@ -1,7 +1,18 @@
 <template>
-  <h1>Hello {{ name }}</h1>
-
-  <button @click="name = 'Jane'">Change Name</button>
+  <div class="container py-5">
+    <h1 class="h2 mb-4 border-bottom pb-2">Mon panier</h1>
+    <main>
+      <section>
+        <article class="card shadow">
+          <div class="card-body">
+            <h2 class="h4 text-primary">{{ titre }}</h2>
+            <div>{{ description }}</div>
+            <div>Acheté par {{ lastname }} {{ firstname }}</div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
 </template>
 
 <script setup>
@@ -10,8 +21,8 @@
 
 // dynamique:
 import { ref } from 'vue'
-const name = ref('John')
-// ici en fait on déclare un objet qui contient une propriété name.value qui est égale à John
-
-name.value = 'Maria'
+const firstname = ref('John')
+const lastname = ref('Doe')
+const titre = ref('Livre')
+const description = ref('Un super livre')
 </script>
