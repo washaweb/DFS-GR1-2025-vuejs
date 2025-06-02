@@ -1,26 +1,29 @@
-# 🧪 Syntaxe des templates et réactivité — Exercice "Générateur de pseudo gamer"
+# 🧪 Exercice : Syntaxe des templates VueJS, station Météo
 
 ## 🎯 Objectif pédagogique
 
-Dans cet exercice, tu vas :
+Dans ce chapitre, nous allons apprendre à :
 
-- Utiliser `{{ }}` pour interpoler des variables
-- Afficher des éléments conditionnellement avec `v-if` / `v-else`
-- Générer dynamiquement une liste avec `v-for`
+- Comprendre la syntaxe des templates Vue.js
+- Afficher du texte dynamiquement avec `{{ }}`
+- Utiliser les directives Vue : `v-bind`, `v-if`, `v-for`, `v-on`
+- Manipuler dynamiquement des données dans l’interface
 
-Projet fun : **"Générateur de pseudo gamer"** 🎲  
-Génère des pseudos en combinant aléatoirement des préfixes et suffixes selon un type de jeu sélectionné.
+Nous allons créer un petit projet : **Un tableau de bord météo simplifié** ☁️
 
-Composer un formulaire qui permet de réaliser son propre pseudo en choisissant parmis ces options, astuce: utiliser une variable `computed` pour composer le nom final.
+Voici les données de bases :
+villes: "Marseille", Lille"
+temperature: 27, 12
+previsions Marseille: [
+{ jour: "Lundi", temps: "Soleil" },
+{ jour: "Mardi", temps: "Soleil" },
+{ jour: "Mercredi", temps: "Soleil" },
+]
+previsions Lille: [
+{ jour: "Lundi", temps: "Nuageux" },
+{ jour: "Mardi", temps: "Nuageux" },
+{ jour: "Mercredi", temps: "Pluie" },
+]
 
-Classes de jeu:
-
-```js
-{
-  fps: ['Sniper', 'Headshot', 'Ghost', 'Reaper'],
-  rpg: ['Elwyn', 'Shadowblade', 'Thorin', 'Elandor'],
-  str: ['Commandant', 'Tactik', 'Builder', 'ZergRush']
-}
-```
-
-Suffixe: `suffixes: ['X', '77', '_Pro', 'Master', '666']`
+Créer un template qui affiche les données météo,
+Créer un bouton qui permet d'alterner successivement d'une ville à l'autre.
