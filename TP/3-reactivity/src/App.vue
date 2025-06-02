@@ -15,6 +15,17 @@
           <input type="text" class="form-control" id="title" v-model="title" />
         </div>
 
+        <p>Exemple avec un select :</p>
+
+        <div class="mb-3">
+          <label for="title" class="form-label">Sélectionner un animal</label>
+          <select class="form-contol" v-model="selectedAnimal">
+            <option value="">Sélectionnez un animal :</option>
+            <option v-for="animal in zoo" :value="animal">{{ animal }}</option>
+          </select>
+        </div>
+        <p>Animal sélectioné :{{ selectedAnimal }}</p>
+
         <!-- directives conditionnelles (voir aussi le v-show)-->
         <p v-if="online" class="text-success">Je suis online</p>
         <p v-else class="text-danger">Je suis offline</p>
@@ -54,6 +65,7 @@ const user = ref({
   lastname: 'Doe',
   title: 'M.',
 })
+const selectedAnimal = ref('')
 
 // les variables calculées sont mis en cache, elles sont automatiquement recalculées si l'une des variables dont dépent le calcul est mise à jour, sinon, c'est le cache du resultat qui est affiché.
 const userFullName = computed(() => {
