@@ -12,7 +12,7 @@
 
           <select
             v-if="isGameSelected"
-            class="form-control"
+            class="mt-2 form-control"
             v-model="selectedPseudo"
             id="gamePseudos"
           >
