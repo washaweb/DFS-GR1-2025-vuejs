@@ -10,7 +10,16 @@ Dans cet exercice, tu vas :
 - Gérer un système de succès ou trophées débloqués
 
 Projet fun : **"Système d’achievements"** 🏆  
+
 Un joueur clique pour progresser, et débloque des succès à mesure qu’il atteint des milestones.
+
+- Créer un bouton de jeu, le joueur doit cliquer pour faire progresser son score
+- Utiliser un watcher sur le clic, afin de lister les succès du joueur au fur et à messure de l'avancée de sa quête.
+- stoquer les succès du joueur dans une variable `succesDebloques`
+- Voici les conditions d'achèvement :
+  - au seuil 10, 'Premier réflexe',
+  - au seuil 50 'Doigt d’acier',
+  - au seuil 100, 'Clickmaster 3000'
 
 ---
 

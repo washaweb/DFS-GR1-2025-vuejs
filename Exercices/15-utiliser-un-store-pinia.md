@@ -12,6 +12,16 @@ Dans cet exercice, tu vas :
 Projet fun : **"Gestionnaire de profil global"** 👤  
 L’utilisateur peut modifier son profil depuis n’importe quelle vue grâce à Pinia.
 
+Exemple d'utilisateur:
+
+```js
+{
+  nom: 'DarkPlayer',
+  niveau: 5,
+  achievements: ['Tutoriel terminé']
+}
+```
+
 ---
 
 ## 🧱 Étape 1 : Installer Pinia

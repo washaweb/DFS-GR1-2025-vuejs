@@ -1,4 +1,3 @@
-
 # 🧪 Chapitre 12 (alt) : Slots — "Système de notifications"
 
 ## 🎯 Objectif pédagogique
@@ -11,6 +10,11 @@ Dans cet exercice, tu vas :
 
 Projet fun : **"Système de notifications"** 📋  
 Créer un composant de type "toast" ou "modal" qui peut recevoir un contenu personnalisé selon le type de message.
+
+- utiliser 3 slots :
+  - un slot pour l'icône
+  - un slot pour le titre
+  - un slot (par défaut): le contenu
 
 ---
 

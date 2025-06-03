@@ -1,4 +1,3 @@
-
 # 🧪 Chapitre 6 (alt) : Gestion des événements — "Mini clicker game"
 
 ## 🎯 Objectif pédagogique
@@ -11,6 +10,12 @@ Dans cet exercice, tu vas :
 
 Projet fun : **"Mini clicker game"** 🕹️  
 Clique sur le monstre pour lui infliger des dégâts. Une attaque spéciale peut être déclenchée avec la barre espace.
+
+- au clic sur le monstre, lui infliger 1 point de dégat et indiquer le message: "Attaque normale !"
+- un appuis sur la barre d'espace lui inflige une attaque spéciale de 10 points de vie, + message "Attaque spéciale !"
+- au survol, le monstre vous repère et le message indiqué est "👀 Il vous a repéré !"
+- utilisez le cycles de vie de votre composant pour ajouter les écouteurs d'événement au clavier
+- n'oubliez pas d'enlever les écouteurs si le composant est détruit.
 
 ---
 

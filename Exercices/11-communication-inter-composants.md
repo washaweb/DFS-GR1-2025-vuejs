@@ -12,6 +12,19 @@ Dans cet exercice, tu vas :
 Projet fun : **"Boutique de jeux"** 🛒  
 Un composant parent affiche une boutique avec des produits. Chaque carte jeu permet d’ajouter au panier (géré par le parent).
 
+- Crée un composant panier
+- Crée une liste de composants jeux, chaque jeu a un prix, et un bouton pour l'ajouter au panier
+- utilise la communication inter-composants pour modifier le panier, lorsqu'un jeu est ajouté à la sélection du panier
+- voici les caractéristiques d'un jeu exemple:
+
+```js
+{ 
+  nom: 'Zelda',
+  prix: 59, 
+  image: 'The_Legend_of_Zelda_Tears_of_the_Kingdom_cover.jpg'
+},
+```
+
 ---
 
 ## 🧱 Étape 1 : Composant enfant `JeuCard.vue`

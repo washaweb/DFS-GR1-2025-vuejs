@@ -12,6 +12,13 @@ Dans cet exercice, tu vas :
 Projet fun : **"Créateur de personnage"** ⚔️  
 L’utilisateur remplit un formulaire pour créer un héros avec nom, classe, stats et compétences.
 
+Les caractéristiques d'une fiche de personnage sont les suivante :
+
+- nom: '',
+- classe (à choisir entre): voleur, guerrier, magicien, rodeur,
+- compétences (bonus: 100 points à répartir entre): intelligence, force, agilité, charisme
+- competences (bonus: max 3 cochées): magie, furtivité, rapidité, crochetage, arme de jet, arme de melée
+
 ---
 
 ## 🧱 Étape 1 : Composant `App.vue`
@@ -36,6 +43,12 @@ L’utilisateur remplit un formulaire pour créer un héros avec nom, classe, st
 
       <label>Agilité : {{ agilite }}</label>
       <input type="range" v-model="agilite" min="0" max="100" />
+      
+      <label>Charisme : {{ charisme }}</label>
+      <input type="range" v-model="charisme" min="0" max="100" />
+      
+      <label>Intelligence : {{ intelligence }}</label>
+      <input type="range" v-model="intelligence" min="0" max="100" />
 
       <label>
         <input type="checkbox" v-model="competences.magie" />
@@ -44,6 +57,22 @@ L’utilisateur remplit un formulaire pour créer un héros avec nom, classe, st
       <label>
         <input type="checkbox" v-model="competences.furtivite" />
         Maître de la furtivité
+      </label>
+      <label>
+        <input type="checkbox" v-model="competences.rapidide" />
+        Maître de la rapidité
+      </label>
+      <label>
+        <input type="checkbox" v-model="competences.crochetage" />
+        Maître du crochetage
+      </label>
+      <label>
+        <input type="checkbox" v-model="competences.arme_jet" />
+        Maître des arme de jet
+      </label>
+      <label>
+        <input type="checkbox" v-model="competences.arme_melee" />
+        Maître des arme de mélée
       </label>
     </form>
 
@@ -54,9 +83,12 @@ L’utilisateur remplit un formulaire pour créer un héros avec nom, classe, st
       <p>Agilité : {{ agilite }}</p>
       <p>Compétences :</p>
       <ul>
-        <li v-if="competences.magie">✨ Magie</li>
-        <li v-if="competences.furtivite">🕶️ Furtivité</li>
-        <li v-if="!competences.magie && !competences.furtivite">Aucune</li>
+        <li v-if="competences.magie">Magie</li>
+        <li v-if="competences.furtivite">Furtivité</li>
+        <li v-if="competences.rapidide">Rapidité</li>
+        <li v-if="competences.crochetage">Crochetage</li>
+        <li v-if="competences.arme_jet">Armes de Jet</li>
+        <li v-if="competences.arme_melee">Armes de Mélée</li>
       </ul>
     </div>
   </div>
@@ -68,11 +100,17 @@ export default {
     return {
       nom: '',
       classe: '',
-      force: 50,
-      agilite: 50,
+      force: 25,
+      agilite: 25,
+      charisme: 25,
+      intelligence: 25,
       competences: {
         magie: false,
-        furtivite: false
+        furtivite: false,
+        rapidite: false,
+        crochetage: false,
+        arme_jet: false,
+        arme_melee: false,
       }
     };
   }

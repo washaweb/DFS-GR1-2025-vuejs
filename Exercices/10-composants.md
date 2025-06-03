@@ -12,6 +12,20 @@ Dans cet exercice, tu vas :
 Projet fun : **"Collection de cartes"** 🎴  
 Afficher une galerie de jeux vidéo sous forme de cartes avec image, nom, genre et note.
 
+- Crée un composant game-card pour afficher un jeu
+- Crée une liste de jeux (min 3 jeux) en utilisant le composant créé
+- Voici les caractéristiques d'un jeu exemple :
+
+```js
+{
+  titre: 'Elden Ring',
+  image: 'https://upload.wikimedia.org/wikipedia/en/b/b9/Elden_Ring_Box_art.jpg',
+  genre: 'Action RPG',
+  note: 9
+}
+```
+
+
 ---
 
 ## 🧱 Étape 1 : Créer le composant `GameCard.vue`

@@ -4,6 +4,7 @@
 ## 🎯 Objectif
 
 Construire une application qui :
+
 - Récupère dynamiquement une liste d’articles
 - Affiche les titres, avec état de chargement et gestion des erreurs
 - Utilise `fetch` ou `axios` selon la version choisie

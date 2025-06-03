@@ -19,6 +19,7 @@ Les humeurs du joueur :
   { mood: 'zen', color: 'lightgreen', emoji: '🧘‍♂️' }
 ]
 un clic sur un bouton "changer d'humeur" permet de passer d'un humeur à la l'autre...
+
 - créer une classe par humeur (happy, sad, angry, zen)
 - pour chaque humeur, utiliser une image d'arrière plan différente (modifiée par la classe utilisée)
 - changer aussi la couleur du texte, et l'émoji affiché
