@@ -1,19 +1,35 @@
-# 🧪 Exercice Binding styles et classes — "Barre de vie dynamique"
+# 1-template-syntax
 
-## 🎯 Objectif pédagogique
+This template should help get you started developing with Vue 3 in Vite.
 
-Dans cet exercice, tu vas :
+## Recommended IDE Setup
 
-- Utiliser `:style` et `:class` pour modifier dynamiquement l'apparence d’un élément
-- Créer des classes CSS conditionnelles
-- Lier des données à des styles en temps réel
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-Projet fun : **"Barre de vie dynamique"** 💚  
-Une barre de points de vie qui change de couleur et de taille selon les PV du joueur.
+## Customize configuration
 
-Créer un template avec une barre de vie (composant progressbar de bootstrap) de couleur verte par défaut,
-Créer 2 boutons, "+ soigner", "- blesser"
-Afficher les PV du joueur (sur 100)
-Si la barre de point de vie passe à moins de 60, la barre verte devient orange, si moins de 30 points de vie, la barre passe à rouge, si 0 = noir.
+See [Vite Configuration Reference](https://vite.dev/config/).
 
-Attention, la barre ne doit pas passer au dessous/dessus des limites 0, 100.
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```

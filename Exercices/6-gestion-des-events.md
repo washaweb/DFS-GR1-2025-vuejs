@@ -1,3 +1,4 @@
+
 # 🧪 Chapitre 6 (alt) : Gestion des événements — "Mini clicker game"
 
 ## 🎯 Objectif pédagogique
@@ -17,6 +18,13 @@ Clique sur le monstre pour lui infliger des dégâts. Une attaque spéciale peut
 - utilisez le cycles de vie de votre composant pour ajouter les écouteurs d'événement au clavier
 - n'oubliez pas d'enlever les écouteurs si le composant est détruit.
 
+Exercice bonus :
+
+- Créer un compteur, et un champ de saisie de type number pour incrémenter, décrémenter le compteur de dégâts.
+- Lorsque j'utilise les flèches du clavier (haut/bas) sur le champ de saisie, avec la touche "shift" enfoncée, je veux que le compteur s'incrément/décrémente par 100 plutôt que par 1.
+
+astuce: utiliser les transformateur d'événement et neutraliser le comportement par défaut qui incrémente par 1.
+
 ---
 
 ## 🧱 Étape 1 : Composant `App.vue`
@@ -30,6 +38,16 @@ Clique sur le monstre pour lui infliger des dégâts. Une attaque spéciale peut
       👾
     </div>
     <p class="message">{{ message }}</p>
+    <div>
+      <input 
+        type="number"
+        aria-label="degats"
+        v-model.number="degats"
+        min="0"
+        @keydown.up.shift.prevent="degats += 100"
+        @keydown.down.shift.prevent="degats -= 100" 
+      />
+    </div>
   </div>
 </template>
 
