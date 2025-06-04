@@ -3,13 +3,17 @@
     <div v-if="isFav" class="favorite-indicator">
       <i class="fas fa-lg fa-star text-warning"></i>
     </div>
-    <div class="game-title text-light h4 fw-bold text-center rounded-top-3">
+    <div
+      class="game-title cursor-pointer text-light h4 fw-bold text-center rounded-top-3"
+      @click="goToGame(game.id)"
+    >
       {{ game?.titre || '-' }}
     </div>
     <img
       :src="game?.image || './defaultimage.jpg'"
       :alt="game?.titre || 'image du jeu'"
-      class="img-fluid rounded-top-3"
+      class="img-fluid rounded-top-3 cursor-pointer"
+      @click="$router.push(`/games/${game?.id}`)"
     />
     <div class="card-body">
       <div class="row">
@@ -32,6 +36,8 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
+const $router = useRouter()
 // récupération des données passées au composant
 const props = defineProps({
   game: {
@@ -43,11 +49,23 @@ const props = defineProps({
     default: false,
   },
 })
+
+const goToGame = (id) => {
+  // redirection vers la page du jeu
+  $router.push({
+    name: 'game',
+    params: { id },
+  })
+}
+
 // événement pour avertir le parent de l'appel de la fonction editFav
 const emit = defineEmits(['editFav'])
 </script>
 
 <style scoped>
+.cursor-pointer {
+  cursor: pointer;
+}
 .game-title {
   position: absolute;
   top: 0;

@@ -1,16 +1,19 @@
 <template>
-  <h1>Game detail</h1>
-  <template v-if="game">
-    <p>Id du jeu :</p>
-    <pre>
-      {{ $route.params.id }}
-      {{ id }}
-      {{ game }}
-    </pre>
-  </template>
-  <template v-else>
-    <p>Le jeu n'existe pas</p>
-  </template>
+  <div class="container my-4">
+    <h1>Game detail</h1>
+    <template v-if="game">
+      <p>Id du jeu :</p>
+      <pre>
+        {{ $route.params.id }}
+        {{ id }}
+        {{ game }}
+      </pre>
+    </template>
+    <template v-else>
+      <p>Le jeu n'existe pas</p>
+    </template>
+    <BButton variant="dark" iconLeft="arrow-left" @click="$router.push('/games')">Retour</BButton>
+  </div>
 </template>
 
 <script setup>

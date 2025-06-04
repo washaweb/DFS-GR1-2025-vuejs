@@ -6,8 +6,32 @@ const routes = [
   // une route contient généralement un nom, un chemin et un composant
   { name: 'home', path: '/', component: HomeView },
   // on peut aussi utiliser une fonction asynchrone pour charger le composant
-  { name: 'about', path: '/about', component: () => import('@/views/AboutView.vue') },
-  { name: 'games', path: '/games', component: () => import('@/views/GameView.vue') },
+  {
+    name: 'about',
+    path: '/about',
+    component: () => import('@/views/AboutView.vue'),
+    children: [
+      {
+        name: 'mentions',
+        path: 'mentions',
+        component: () => import('@/views/About/MentionView.vue'),
+      },
+      {
+        name: 'author',
+        path: 'author',
+        component: () => import('@/views/About/AuthorView.vue'),
+      },
+      {
+        path: '',
+        redirect: { name: 'mentions' },
+      },
+    ],
+  },
+  {
+    name: 'games',
+    path: '/games',
+    component: () => import('@/views/GameView.vue'),
+  },
   // on peut ajouter des paramètres dans les routes, ainsi que des metas-données
   {
     name: 'game',
@@ -37,20 +61,12 @@ const router = createRouter({
 // ici on écrit un navigation gard pour gérer les routes avant que la navigation ne soit effectuée
 router.beforeEach((to, from, next) => {
   // console.log('onBefore Router', to, from)
-  // si la route est une route de détail du jeu et que l'id est bien un nombre entier positif, je permet le passage
   if (to.name === 'game' && parseInt(to.params?.id) > 0) {
     console.log('OK')
-    next()
-    // sinon, je redirige vers la route /games (au passage il faut vérifier que nous ne sommes pas sur la route /games)
   } else {
     console.log('KO')
-    if (to.path !== '/games') {
-      next('/games')
-    } else {
-      // Si je suis déjà sur la route /games, je laisse passer
-      next()
-    }
   }
+  next()
 })
 
 export default router

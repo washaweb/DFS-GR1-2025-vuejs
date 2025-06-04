@@ -17,13 +17,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <RouterLink to="/" class="nav-link">Home</RouterLink>
+              <RouterLink activeClass="active" to="/" class="nav-link">Home</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink to="/about" class="nav-link">About</RouterLink>
+              <RouterLink activeClass="active" to="/about" class="nav-link">About</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink to="/games" class="nav-link">Game list</RouterLink>
+              <RouterLink activeClass="active" to="/games" class="nav-link">Game list</RouterLink>
             </li>
           </ul>
         </div>
