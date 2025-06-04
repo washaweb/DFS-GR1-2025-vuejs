@@ -3,6 +3,12 @@
     <div class="row">
       <div class="col-md-6">
         <h1>Liste de jeux</h1>
+
+        <!-- intégration d'un composant depuis la librairie vue-date-picker -->
+        <VueDatePicker v-model="dateStart" />
+
+        <pre>{{ dateStart }}</pre>
+
         <!-- liste des jeux, 
          - on injecte les props game et isFav
          - on écoute l'événement editFav qui est émis par le composant GameCard, on récupère le boolean $event émis par le composant GameCard et on passe le jeu en paramètre de la fonction editFav qui est dans le parent (ici dans App.vue)
@@ -59,6 +65,7 @@ import games from '@/seeds/games.js'
 import GameCard from '@/components/GameCard.vue'
 import GameCardSmall from '@/components/GameCardSmall.vue'
 // le composant BButton est importé globalement voir dans `src/main.js`
+const dateStart = ref(null)
 
 // liste des jeux et des favoris
 const gameList = ref(games) //ici on injecte les données seed chargées depuis le fichier `src/seeds/games.js`
