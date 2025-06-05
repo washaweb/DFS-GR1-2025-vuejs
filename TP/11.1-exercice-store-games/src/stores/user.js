@@ -22,6 +22,11 @@ export const useUserStore = defineStore('user', () => {
     return genres
   })
 
+  // enregistrer les données de l'utilisateur
+  const updateUser = (data) => {
+    user.value = { ...data }
+  }
+
   // ajouter un jeu aux favoris du joueur
   const addUserFav = (game) => {
     user.value.favs.push(game)
@@ -40,10 +45,11 @@ export const useUserStore = defineStore('user', () => {
   return {
     user,
     userFavs,
-    isGameInFavs,
-    addUserFav,
     userFavsCount,
     userFavsGamesGenre,
+    updateUser,
+    isGameInFavs,
+    addUserFav,
     removeUserFav,
   }
 })
