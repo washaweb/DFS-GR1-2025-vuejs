@@ -4,8 +4,10 @@ app.use(express.json())
 const port = 3000
 // imports des routes par module
 import gamesRoutes from './routes/games.mjs'
+import usersRoutes from './routes/users.mjs'
 
 app.use('/games', gamesRoutes)
+app.use('/users', usersRoutes)
 
 app.get('/', (req, res) => {
   res.json('API pour notre app Vue-js')
