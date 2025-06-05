@@ -1,0 +1,15 @@
+meta {
+  name: patch game
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{url}}/games/:id
+  body: none
+  auth: none
+}
+
+params:path {
+  id: 123
+}

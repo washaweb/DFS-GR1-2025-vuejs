@@ -1,0 +1,15 @@
+meta {
+  name: delete game
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{url}}/games/:id
+  body: none
+  auth: none
+}
+
+params:path {
+  id: 123
+}
