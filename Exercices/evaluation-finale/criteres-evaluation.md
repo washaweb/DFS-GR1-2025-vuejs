@@ -7,14 +7,14 @@
 - Implémentation des routes principales
 - Backend fonctionnel avec stockage JSON
 
-## 5 points
+## 6 points
 
 - CRUD complet pour les factures
 - Store Pinia fonctionnel pour les factures
 - Interface utilisateur soignée avec Bootstrap
 - Tests API documentés
 
-## 3 points
+## 4 points
 
 - CRUD complet pour les clients
 - Store Pinia pour les clients

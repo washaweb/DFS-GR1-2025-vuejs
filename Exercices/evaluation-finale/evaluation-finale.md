@@ -3,7 +3,7 @@
 ## Objectifs pédagogiques
 
 - Créer une application complète de facturation en VueJS et NodeJS avec un API REST.
-- Backend en NodeJs qui stocke les données dans un fichier JSON et effecture les opérations CRUD.
+- Backend en NodeJs qui stocke les données dans un fichier JSON et effectuer les opérations CRUD.
 - Frontend complet en VueJS, avec un store Pinia, et vue-router.
 - Documentation et test des routes de l'API avec l'application BRUNO
 
