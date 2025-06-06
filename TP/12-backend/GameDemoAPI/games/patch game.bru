@@ -6,10 +6,17 @@ meta {
 
 patch {
   url: {{url}}/games/:id
-  body: none
+  body: json
   auth: none
 }
 
 params:path {
-  id: 123
+  id: 1
+}
+
+body:json {
+  {
+    "titre": "Celeste 2",
+    "note": 5
+  }
 }
