@@ -9,19 +9,21 @@ export const useUserStore = defineStore('user', () => {
 
   console.log(import.meta.env.VITE_API_URL)
   // raccourcis vers les favoris du joueur
-  const userFavs = computed(() => user.value.favs)
+  const userFavs = computed(() => user.value?.favs || [])
 
   // nombre de jeux favoris du joueur
-  const userFavsCount = computed(() => user.value.favs.length)
+  const userFavsCount = computed(() => user.value?.favs?.length || 0)
 
   // liste des catégories des jeux favoris du joueur
   const userFavsGamesGenre = computed(() => {
     const genres = []
-    user.value.favs.forEach((fav) => {
-      if (!genres.includes(fav.genre)) {
-        genres.push(fav.genre)
-      }
-    })
+    if (user.value?.favs.length > 0) {
+      user.value.favs.forEach((fav) => {
+        if (!genres.includes(fav.genre)) {
+          genres.push(fav.genre)
+        }
+      })
+    }
     return genres
   })
 
