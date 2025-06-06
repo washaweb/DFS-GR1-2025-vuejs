@@ -16,6 +16,17 @@ const router = createRouter({
       component: () => import('../views/GameDetailView.vue'),
     },
     {
+      path: '/game/edit/:id',
+      name: 'editgame',
+      props: true,
+      component: () => import('../views/GameEditView.vue'),
+    },
+    {
+      path: '/game/create',
+      name: 'creategame',
+      component: () => import('../views/GameCreateView.vue'),
+    },
+    {
       path: '/profile',
       name: 'profile',
       // route level code-splitting

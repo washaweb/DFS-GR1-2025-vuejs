@@ -54,6 +54,36 @@ export const useGameStore = defineStore('game', () => {
     }
   }
 
+  // modifier cette fonction pour faire appel à l'api afin de récupérer un jeu
+  const patchGame = async (id, data) => {
+    try {
+      const response = await axios.patch(`${import.meta.env.VITE_API_URL}/games/${id}`, data)
+      game.value = response.data
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  // modifier cette fonction pour faire appel à l'api afin de récupérer un jeu
+  const createGame = async (data) => {
+    try {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/games`, data)
+      game.value = response.data
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  // modifier cette fonction pour faire appel à l'api afin de récupérer un jeu
+  const deleteGame = async (id) => {
+    try {
+      const response = await axios.delete(`${import.meta.env.VITE_API_URL}/games/${id}`)
+      game.value = response.data
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return {
     games,
     game,
@@ -61,5 +91,8 @@ export const useGameStore = defineStore('game', () => {
     gameStatsByGenre,
     getGames,
     getGame,
+    patchGame,
+    createGame,
+    deleteGame,
   }
 })

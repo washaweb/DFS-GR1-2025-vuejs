@@ -3,13 +3,17 @@
     <div v-if="isFav" class="favorite-indicator">
       <i class="fas fa-lg fa-star text-warning"></i>
     </div>
-    <div class="game-title text-light h4 fw-bold text-center rounded-top-3">
+    <div
+      class="game-title text-light h4 fw-bold text-center rounded-top-3"
+      @click="$router.push(`/game/${game.id}`)"
+    >
       {{ game?.titre || '-' }}
     </div>
     <img
       :src="game?.image || './defaultimage.jpg'"
       :alt="game?.titre || 'image du jeu'"
-      class="img-fluid rounded-top-3"
+      class="img-fluid rounded-top-3 game-img"
+      @click="$router.push(`/game/${game.id}`)"
     />
     <div class="card-body">
       <div class="row">
@@ -25,7 +29,10 @@
     </div>
     <div class="card-footer d-flex gap-2" v-if="showButtons">
       <router-link class="btn btn-secondary btn-sm" :to="`/game/${game.id}`">
-        Voir le détail
+        <i class="fa-solid fa-eye"></i>
+      </router-link>
+      <router-link class="btn btn-secondary btn-sm" :to="`/game/edit/${game.id}`">
+        <i class="fa-solid fa-pen"></i>
       </router-link>
       <button @click="emit('editFav', !isFav)" class="btn btn-secondary btn-sm">
         {{ isFav ? 'Retirer des' : 'Ajouter aux' }} favoris
@@ -62,7 +69,11 @@ const emit = defineEmits(['editFav'])
   right: 0;
   height: 100px;
   padding-top: 20px;
+  cursor: pointer;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 100%);
+}
+.game-img {
+  cursor: pointer;
 }
 .favorite-indicator {
   position: absolute;

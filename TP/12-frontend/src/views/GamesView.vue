@@ -29,6 +29,14 @@
         >
           Profil utilisateur
         </BButton>
+        <BButton
+          iconLeft="gamepad"
+          variant="primary"
+          class="w-100 mb-3"
+          @click="$router.push('/game/create')"
+        >
+          Créer un nouveau jeu
+        </BButton>
 
         <h2>Graphique des genres</h2>
 

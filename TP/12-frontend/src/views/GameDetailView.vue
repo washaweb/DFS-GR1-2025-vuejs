@@ -9,6 +9,13 @@
         <BButton iconLeft="arrow-left" variant="dark" class="w-100 mb-3" @click="$router.push('/')"
           >Retour</BButton
         >
+        <BButton
+          iconLeft="gamepad"
+          variant="primary"
+          class="w-100 mb-3"
+          @click="$router.push(`/game/edit/${game.id}`)"
+          >Modifier</BButton
+        >
 
         <pre
           >{{ id }}
