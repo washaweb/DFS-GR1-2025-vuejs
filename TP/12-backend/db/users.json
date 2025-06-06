@@ -1,1 +1,1 @@
-[{"id":1,"name":"John Doe","email":"john@gmail.com","pseudoname":"DarkMagician","favs":[]},{"id":2,"name":"Maria Doe","email":"maria@gmail.com","pseudoname":"ElvenStar78","favs":[]}]
+[{"id":1,"name":"John Doe 2","email":"john@gmail.com","pseudoname":"DarkMagician","favs":[{"id":1,"titre":"Celeste","image":"/Celeste_boxart.jpg","genre":"Plateforme","note":9}],"age":25},{"id":2,"name":"Maria Doe","email":"maria@gmail.com","pseudoname":"ElvenStar78","favs":[]}]

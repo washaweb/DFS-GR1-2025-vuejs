@@ -88,14 +88,14 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onBeforeMount } from 'vue'
 import { useUserStore } from '@/stores/user'
 import { storeToRefs } from 'pinia'
 import GameCard from '@/components/GameCard.vue'
 
 const userStore = useUserStore()
 const { user, userFavs, userFavsCount, userFavsGamesGenre } = storeToRefs(userStore)
-const { updateUser } = userStore
+const { getUserById, updateUser } = userStore
 
 // logique du formulaire d'édition de l'utilisateur
 // j'importe l'interface type de l'utilisateur
@@ -133,6 +133,11 @@ const validate = (value) => {
 const formInvalid = computed(() => {
   console.log(form.value)
   return form.value.name.length < 3 || form.value.pseudoname.length < 3 || form.value.age == 0
+})
+
+onBeforeMount(async () => {
+  // await getGames()
+  await getUserById(1)
 })
 </script>
 
