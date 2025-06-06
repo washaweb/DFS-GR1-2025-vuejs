@@ -51,6 +51,7 @@ import GameCard from '@/components/GameCard.vue'
 const gameStore = useGameStore()
 const userStore = useUserStore()
 const { games, gameStatsByGenre } = storeToRefs(gameStore)
+const { getGames } = gameStore
 const { user } = storeToRefs(userStore)
 // const { getGames } = gameStore
 const { isGameInFavs, removeUserFav, addUserFav } = userStore
@@ -63,8 +64,11 @@ const onEditFav = async (game) => {
     await addUserFav(game)
   }
 }
+
 onBeforeMount(async () => {
-  // await getGames()
+  // on appelle la liste des jeux depuis l'API
+  await getGames()
+  // on appelle l'utilisateur depuis l'API
   await getUserById(1)
 })
 

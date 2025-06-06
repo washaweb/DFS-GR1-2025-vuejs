@@ -22,7 +22,7 @@
 <script setup>
 import { useGameStore } from '@/stores/game'
 import { storeToRefs } from 'pinia'
-import { onMounted } from 'vue'
+import { onBeforeMount } from 'vue'
 import GameCard from '@/components/GameCard.vue'
 
 const gameStore = useGameStore()
@@ -36,7 +36,7 @@ const props = defineProps({
   },
 })
 
-onMounted(() => {
-  getGame(props.id)
+onBeforeMount(async () => {
+  await getGame(props.id)
 })
 </script>

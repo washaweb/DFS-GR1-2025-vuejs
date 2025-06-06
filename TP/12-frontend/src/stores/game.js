@@ -1,13 +1,10 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-// importer axios
-
-// retirer les seeds (qui seront replacés par les données de l'API)
-import gameList from '@/seeds/games.js'
+import axios from 'axios'
 
 export const useGameStore = defineStore('game', () => {
   // déclarer un tableau vide (qui sera rempli par les données de l'API)
-  const games = ref(gameList)
+  const games = ref([])
   const game = ref(null)
 
   const gamesCount = computed(() => {
@@ -38,10 +35,23 @@ export const useGameStore = defineStore('game', () => {
   })
 
   // faire une nouvelle fonction poru récupérer la liste des jeux
+  const getGames = async () => {
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/games`)
+      games.value = response.data
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   // modifier cette fonction pour faire appel à l'api afin de récupérer un jeu
-  const getGame = (id) => {
-    game.value = games.value.find((game) => game.id === parseInt(id))
+  const getGame = async (id) => {
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/games/${id}`)
+      game.value = response.data
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return {
@@ -49,6 +59,7 @@ export const useGameStore = defineStore('game', () => {
     game,
     gamesCount,
     gameStatsByGenre,
+    getGames,
     getGame,
   }
 })
