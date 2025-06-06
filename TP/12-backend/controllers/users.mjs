@@ -94,7 +94,7 @@ const postItem = async (req, res) => {
     
     // vérification des données côté backend (IMPORTANT pour la sécurité)
     if (!itemToSave.name || itemToSave.name.trim().length < 3) {
-      console.log(itemToSave)
+      //console.log(itemToSave)
       res.status(400).json({ error: true, message: 'Missing name or name too short' })
       return
     }
